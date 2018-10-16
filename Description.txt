@@ -1,0 +1,8 @@
+One should be careful withh GetInstance() method if 
+dealing withmultithredding. May be you should introduce locks or smth..
+
+If our singleton is always used and creating of the instance doesnt take 
+critical amount of time one can preinitialize singleton like
+
+private static Singleton singleton = new Singleton();
+If so, GetInstance method returns the instance without null check.
